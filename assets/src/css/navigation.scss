@@ -1,0 +1,185 @@
+.site-header {
+  display: block;
+  overflow: hidden;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e5e5;
+
+  .site-branding {
+	float: left;
+	width: 50%;
+
+	.site-title {
+	  font-size: 36px;
+	  font-weight: bold;
+	  line-height: 1;
+	  color: #333332;
+	  margin: 5px 0 0 0;
+	  text-transform: uppercase;
+
+	  a {
+		text-decoration: none;
+		color: inherit;
+		font-size: 32px;
+		vertical-align: top;
+
+		&:hover {
+		  color: inherit;
+		}
+	  }
+
+	}
+  }
+}
+
+.main-navigation {
+  text-align: center;
+  float: right;
+  width: 50%;
+
+  .menu-primary-menu-container {
+	float: right;
+  }
+
+  a {
+	display: block;
+	text-decoration: none;
+	font-size: 16px;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	outline: 0;
+
+  }
+
+  ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+  }
+
+  ul ul {
+	box-shadow: 0 4px 40px rgba(0,0,0,.1);
+	background-color: #FFFFFF;
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+	text-align: left;
+  }
+
+  ul ul ul {
+	left: -999em;
+	top: 0;
+  }
+
+  ul ul li:hover > ul {
+	left: 100%;
+  }
+
+  ul ul li.focus > ul {
+	left: 100%;
+  }
+
+  ul ul a {
+	width: 200px;
+  }
+
+  ul li:hover > ul {
+	display: block;
+	left: auto;
+  }
+
+  ul li.focus > ul {
+	display: block;
+	left: auto;
+  }
+
+  li {
+	position: relative;
+  }
+}
+
+.menu-toggle {
+  float: right;
+}
+
+@media screen and (max-width: 1023px) {
+  /* Small menu. */
+  .menu-toggle,
+  .main-navigation.toggled ul {
+	display: block;
+	margin: 0 auto;
+  }
+
+  .site-header {
+
+	.site-branding {
+	  width: 70%;
+	}
+
+	.main-navigation {
+	  width: 100%;
+	  display: block;
+
+	  .menu-primary-menu-container {
+		float: left;
+		width: 100%;
+
+		ul {
+		  border-top: 2px solid $border_color;
+		  margin-top: 10px;
+
+		  li {
+			a {
+			  text-align: left;
+			}
+		  }
+		}
+	  }
+	}
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-toggle {
+	display: none;
+  }
+  .main-navigation {
+	.menu-primary-menu-container {
+	  ul {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	  }
+	}
+  }
+
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 auto 10px;
+  max-width: 880px;
+  overflow: hidden;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  width: 50%;
+  flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  text-align: end;
+  flex: 1 0 50%;
+}
